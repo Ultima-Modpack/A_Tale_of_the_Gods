@@ -1,0 +1,108 @@
+repositories.ivy { name "Curse"; artifactPattern "http://addons-origin.cursecdn.com/files/[organisation].[ext]" }
+
+ext.MODS_CONFIGURATION = "mods"
+ext.CURSE_MODS_CONFIGURATION = "curseMods"
+configurations.create(MODS_CONFIGURATION)
+configurations.create(CURSE_MODS_CONFIGURATION)
+
+ext.addMod = { modDef ->
+	dependencies.add(MODS_CONFIGURATION, modDef)
+}
+ext.addCurseMod = { String fileName, String curseForgeFileID, String projectID=null ->
+	if (projectID != null)
+		setCurseMetadata projectID, curseForgeFileID
+
+	// curse splits the file id into two parts, where the first part is 4 chars long
+	def curseID = [curseForgeFileID.take(4), curseForgeFileID.drop(4)]
+	def splitFileName = fileName.lastIndexOf('.').with {it != -1 ? [fileName[0..<it], fileName.substring(it+1)] : [fileName]}
+	def baseFileName = splitFileName[0]
+	def extension = splitFileName.size() == 2 ? splitFileName[1] : "jar"
+	// split the base name by '-' so it will be named the same after being resolved, as Gradle will rename
+	// the artifact to $name-$version.jar no matter what the values of either of those variables are
+	def splitBaseName = baseFileName.split("-", 2);
+	assert splitBaseName.size() >= 2, "Could not add Curse mod '$baseFileName'; the filename must have a '-' character or it will be misnamed by Gradle"
+	def modName = splitBaseName[0]
+	def modVersion = splitBaseName[1]
+	dependencies.add(CURSE_MODS_CONFIGURATION, "${curseID.join('/')}/$baseFileName:$modName:$modVersion@$extension")
+}
+ext.setCurseMetadata = { String projectID, String fileID ->
+	curseMetadata[projectID] = fileID
+}
+
+ext.curseMetadata = [:] as Map<String, ?>
+ext.modpackFiles = files()
+
+task syncMods(type: Sync, group: "modpack tools", description: "Syncs all of the modpack's mod files to ./mods") {
+	from configurations.getByName(MODS_CONFIGURATION)
+	from configurations.getByName(CURSE_MODS_CONFIGURATION)
+	into "mods"
+}
+
+// use an intermediate task to defer the task configuration until after the project is evaluated
+// this allows variables to be populated during project evaluation
+task configureModpackTasks << {
+	packageModpack {
+		from modpackFiles
+		into("mods") { from configurations.getByName(MODS_CONFIGURATION) }
+		into("mods") { from configurations.getByName(CURSE_MODS_CONFIGURATION) }
+		destinationDir = new File("$buildDir/distributions")
+		baseName = project.archivesBaseName
+		version = project.version
+	}
+	packageCurseModpack {
+		into("overrides") {
+			from modpackFiles
+			into("mods") { from configurations.getByName(MODS_CONFIGURATION) }
+		}
+		from generateCurseManifest.outputs
+		destinationDir = new File("$buildDir/distributions")
+		baseName = project.archivesBaseName
+		version = project.version
+		classifier = "curse"
+	}
+	generateCurseManifest {
+		def manifest = new File(buildDir, "manifest.json")
+		outputs.file manifest
+		inputs.property "curseMeta", curseMetadata
+		inputs.property "modpackMeta", modPack
+		inputs.property "modpackVersion", version
+		doLast {
+			def content = [
+					"manifestType": "minecraftModpack",
+					"manifestVersion": 1,
+					"name": modPack.name,
+					"version": version,
+					"author": modPack.author,
+					"description": modPack.description,
+					"overrides": "overrides",
+					"minecraft": [
+						"version": modPack.mcVersion,
+						"libraries": "libraries",
+						"modLoaders": [
+							[
+								"id": modPack.forgeVersion,
+								"primary": true
+							]
+						]
+					],
+					"files": curseMetadata.collect { key, val ->
+						return ["projectID": key, "fileID": val]
+					}
+			]
+			manifest.getParentFile().mkdirs()
+			manifest.write(new groovy.json.JsonBuilder(content).toPrettyString())
+		}
+	}
+}
+
+task generateCurseManifest(dependsOn: configureModpackTasks, group: "modpack tools", description: "Creates a manifest.json useable by the Curse launcher")
+task packageModpack(type: Zip, dependsOn: configureModpackTasks, group: "modpack tools", description: "Packages all modpack files into a .zip")
+task packageCurseModpack(type: Zip, dependsOn: [configureModpackTasks, generateCurseManifest], group: "modpack tools", description: "Packages the modpack as a .zip that can be imported into the Curse launcher")
+
+task build(dependsOn: [packageModpack, packageCurseModpack], group: "build") {
+}
+
+task clean(type: Delete) {
+	delete buildDir
+	group "build"
+}

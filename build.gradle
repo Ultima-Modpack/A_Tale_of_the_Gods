@@ -1,0 +1,28 @@
+apply from: 'modpack.gradle'
+
+ext.archivesBaseName = "ATaleOfTheGods"
+version = "0.1.0"
+ext.modPack = [
+	name: "A Tale of the Gods",
+	author: "Mewr11 and calebrudolph",
+	description: "No memory, no name, no space. Just a birdbath, some rusty gardening tools, and a will as strong as steel.",
+	mcVersion: "1.12",
+	forgeVersion: "forge-14.21.1.2407"
+]
+
+modpackFiles += fileTree(projectDir) {
+	include "scripts/**/*.zs"
+	include "config/**"
+}
+
+// filename, fileID, projectID
+// projectID is optional, and is only used when generating the Curse-specific manifest.json
+addCurseMod "BiblioCraft[v2.4.2][MC1.12.0].jar", "2442496", "228027"
+addCurseMod "Chameleon-1.12-4.1.1.jar", "2447754", "230497"
+addCurseMod "Chisel-MC1.12-0.0.13.12.jar", "2449387", "235279"
+addCurseMod "CTM-MC1.12-0.2.0.3.jar", "2447705", "267602"
+addCurseMod "ImmersiveEngineering-0.12-66.jar", "2448771", "231951"
+addCurseMod "industrialcraft-2-2.8.7-ex112.jar", "2448683", "242638"
+addCurseMod "jei_1.12-4.7.1.74.jar", "2447964", "238222"
+addCurseMod "journeymap-1.12-5.4.9.jar", "2444030", "32274"
+addCurseMod "StorageDrawers-1.12-5.2.8.jar", "2448797", "223852"
