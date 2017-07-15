@@ -1,6 +1,7 @@
 CalebRudolph - Modpack developer, Core mod developer
 Mewr11 - Modpack developer, Creative lead
 
+McJty - Having good documentation
 sqeek502 - gradle wizard
 
 JDSinclair - BiblioCraft
