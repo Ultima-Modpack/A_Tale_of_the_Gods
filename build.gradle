@@ -20,6 +20,17 @@
  	}
  }
  
+ task biblioCraftDownload(type: JarDownload) {
+	sourceUrl = 'https://minecraft.curseforge.com/projects/bibliocraft/files/2442496/download'
+	target = 'instance/mods/BiblioCraft[v2.4.2][MC1.12.0].jar'
+	doFirst {
+ 		println 'Downloading BiblioCraft...'
+ 	}
+ 	doLast {
+ 		println 'Complete.'
+ 	}
+ }
+ 
  class JarDownload extends DefaultTask {
  	@Input
  	String sourceUrl
@@ -33,7 +44,7 @@
  	}
  }
  
- task modpackMake(dependsOn: [hello, journeyMapDownload]) {
+ task modpackMake(dependsOn: [hello, journeyMapDownload, biblioCraftDownload]) {
  	println 'Modpack files downloaded.'
  }
  
