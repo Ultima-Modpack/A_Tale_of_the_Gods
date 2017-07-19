@@ -92,6 +92,17 @@
 	}
  }
  
+ task storageDrawersDownload(type: JarDownload) {
+	sourceUrl = 'https://minecraft.curseforge.com/projects/storage-drawers/files/2452828/download'
+	target = 'instance/mods/StorageDrawers-1.12-5.2.9.jar'
+	doFirst {
+		println 'Downloading Storage Drawers...'
+	}
+	doLast {
+		println 'Complete.'
+	}
+ }
+ 
  class JarDownload extends DefaultTask {
  	@Input
  	String sourceUrl
@@ -105,6 +116,6 @@
  	}
  }
  
- task modpackMake(dependsOn: [journeyMapDownload, biblioCraftDownload, chameleonDownload, chiselDownload, ctmDownload, immersiveEngineeringDownload, industrialCraftDownload, jeiDownload]) {
+ task modpackMake(dependsOn: [journeyMapDownload, biblioCraftDownload, chameleonDownload, chiselDownload, ctmDownload, immersiveEngineeringDownload, industrialCraftDownload, jeiDownload, storageDrawersDownload]) {
  	println 'All modpack files downloaded!'
  }
