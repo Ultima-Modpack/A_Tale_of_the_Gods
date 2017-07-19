@@ -31,6 +31,17 @@
  	}
  }
  
+ task chameleonDownload(type: JarDownload) {
+	sourceUrl = 'https://minecraft.curseforge.com/projects/chameleon/files/2450900/download'
+	target = 'instance/mods/Chameleon-1.12-4.1.3.jar'
+	doFirst {
+ 		println 'Downloading Chameleon...'
+ 	}
+ 	doLast {
+ 		println 'Complete.'
+ 	}
+ }
+ 
  class JarDownload extends DefaultTask {
  	@Input
  	String sourceUrl
