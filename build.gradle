@@ -81,6 +81,17 @@
 	}
  }
  
+ task jeiDownload(type: JarDownload) {
+	sourceUrl = 'https://minecraft.curseforge.com/projects/just-enough-items-jei/files/2451305/download'
+	target = 'instance/mods/jei_1.12-4.7.2.77.jar'
+	doFirst {
+		println 'Downloading JEI...'
+	}
+	doLast {
+		println 'Complete.'
+	}
+ }
+ 
  class JarDownload extends DefaultTask {
  	@Input
  	String sourceUrl
@@ -94,6 +105,6 @@
  	}
  }
  
- task modpackMake(dependsOn: [journeyMapDownload, biblioCraftDownload, chameleonDownload, chiselDownload, ctmDownload, immersiveEngineeringDownload, industrialCraftDownload]) {
+ task modpackMake(dependsOn: [journeyMapDownload, biblioCraftDownload, chameleonDownload, chiselDownload, ctmDownload, immersiveEngineeringDownload, industrialCraftDownload, jeiDownload]) {
  	println 'All modpack files downloaded!'
  }
