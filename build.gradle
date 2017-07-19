@@ -70,6 +70,17 @@
 	}
  }
  
+ task industrialCraftDownload(type: JarDownload) {
+	sourceUrl = 'https://minecraft.curseforge.com/projects/industrial-craft/files/2448683/download'
+	target = 'instance/mods/industrialcraft-2-2.8.7-ex112.jar'
+	doFirst {
+		println 'Downloading IndustrialCraft2...'
+	}
+	doLast {
+		println 'Complete.'
+	}
+ }
+ 
  class JarDownload extends DefaultTask {
  	@Input
  	String sourceUrl
@@ -83,6 +94,6 @@
  	}
  }
  
- task modpackMake(dependsOn: [journeyMapDownload, biblioCraftDownload, chameleonDownload, chiselDownload, ctmDownload, immersiveEngineeringDownload]) {
+ task modpackMake(dependsOn: [journeyMapDownload, biblioCraftDownload, chameleonDownload, chiselDownload, ctmDownload, immersiveEngineeringDownload, industrialCraftDownload]) {
  	println 'All modpack files downloaded!'
  }
