@@ -1,4 +1,4 @@
-CalebRudolph - Modpack developer, Core mod developer
+calebrudolph - Modpack developer, Core mod developer
 Mewr11 - Modpack developer, Creative lead
 
 McJty - Having good documentation
