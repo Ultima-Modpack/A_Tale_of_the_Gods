@@ -1,0 +1,13 @@
+calebrudolph - Modpack developer, Core mod developer
+Mewr11 - Modpack developer, Creative lead
+
+McJty - Having good documentation
+sqeek502 - gradle wizard
+
+JDSinclair - BiblioCraft
+jaquadro - Storage Drawers, Chameleon
+tterag1098 - Chisel, ConnectedTextures
+BluSunrize - Immersive Engineering
+Player - industrialcraft
+techbrew - Just Enough Items
+mezz - JourneyMap
