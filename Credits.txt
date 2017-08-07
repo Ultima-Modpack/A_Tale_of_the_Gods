@@ -11,3 +11,5 @@ BluSunrize - Immersive Engineering
 Player - industrialcraft
 techbrew - Just Enough Items
 mezz - JourneyMap
+jaredlll08 - CraftTweaker
+StanH - CraftTweaker
