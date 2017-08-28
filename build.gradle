@@ -127,7 +127,7 @@
  	}
  }
  
- task modpackMake(dependsOn: [journeyMapDownload, biblioCraftDownload, chameleonDownload, chiselDownload, ctmDownload, immersiveEngineeringDownload, industrialCraftDownload, jeiDownload, storageDrawersDownload]) {
+ task modpackMake(dependsOn: [journeyMapDownload, biblioCraftDownload, chameleonDownload, chiselDownload, ctmDownload, immersiveEngineeringDownload, industrialCraftDownload, jeiDownload, storageDrawersDownload, astralSorceryDownload]) {
  	doLast{
 		println 'All modpack files downloaded!'
 	}
