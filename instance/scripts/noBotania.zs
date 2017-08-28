@@ -1,24 +1,24 @@
 //Temporary file until botania gets updated for 1.12
 
-var oreDiamond  =  <item:minecraft:diamond_ore>;
-var oreRedstone = <item:minecraft:redstone_ore>;
-var oreIron     =     <item:minecraft:iron_ore>;
-var oreGold     =     <item:minecraft:gold_ore>;
-var oreCoal     =     <item:minecraft:coal_ore>;
-var oreEmerald  =  <item:minecraft:emerald_ore>;
-var oreQuartz   =   <item:minecraft:quartz_ore>;
-var oreLapis    =    <item:minecraft:lapis_ore>;
+val oreDiamond  =  <item:minecraft:diamond_ore>;
+val oreRedstone = <item:minecraft:redstone_ore>;
+val oreIron     =     <item:minecraft:iron_ore>;
+val oreGold     =     <item:minecraft:gold_ore>;
+val oreCoal     =     <item:minecraft:coal_ore>;
+val oreEmerald  =  <item:minecraft:emerald_ore>;
+val oreQuartz   =   <item:minecraft:quartz_ore>;
+val oreLapis    =    <item:minecraft:lapis_ore>;
 
-var stone     =         <item:minecraft:stone:*>;
-var nether    =    <item:minecraft:netherrack:*>;
-var orchid    =    <item:minecraft:red_flower:1>;
-var poppy     =    <item:minecraft:red_flower:0>;
-var tulip     =    <item:minecraft:red_flower:6>;
-var dandelion = <item:minecraft:yellow_flower:0>;
-var allium    =    <item:minecraft:red_flower:2>;
-var daisy     =    <item:minecraft:red_flower:8>;
-var shroom    =  <item:minecraft:red_mushroom:0>;
-var bluet     =    <item:minecraft:red_flower:8>;
+val stone     =         <item:minecraft:stone:*>;
+val nether    =    <item:minecraft:netherrack:*>;
+val orchid    =    <item:minecraft:red_flower:1>;
+val poppy     =    <item:minecraft:red_flower:0>;
+val tulip     =    <item:minecraft:red_flower:6>;
+val dandelion = <item:minecraft:yellow_flower:0>;
+val allium    =    <item:minecraft:red_flower:2>;
+val daisy     =    <item:minecraft:red_flower:8>;
+val shroom    =  <item:minecraft:red_mushroom:0>;
+val bluet     =    <item:minecraft:red_flower:8>;
 
 
 recipes.addShaped(oreDiamond,
