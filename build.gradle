@@ -103,6 +103,17 @@
 	}
  }
  
+ task craftTweakDownload(type: JarDownload) {
+	sourceUrl = 'https://minecraft.curseforge.com/projects/crafttweaker/files/2458549/download'
+	target = file('instance/mods/CraftTweaker2-1.12-4.0.2.jar')
+	doFirst {
+		println 'Downloading Craft Tweaker'
+	}
+	doLast {
+		println 'Complete.'
+	}
+ }
+
  task astralSorceryDownload(type: JarDownload) {
 	sourceUrl = 'https://minecraft.curseforge.com/projects/astral-sorcery/files/2452200/download'
 	target = file('instance/mods/astralsorcery-1.12-1.6.1.jar')
@@ -127,7 +138,7 @@
  	}
  }
  
- task modpackMake(dependsOn: [journeyMapDownload, biblioCraftDownload, chameleonDownload, chiselDownload, ctmDownload, immersiveEngineeringDownload, industrialCraftDownload, jeiDownload, storageDrawersDownload, astralSorceryDownload]) {
+ task modpackMake(dependsOn: [journeyMapDownload, biblioCraftDownload, chameleonDownload, chiselDownload, ctmDownload, immersiveEngineeringDownload, industrialCraftDownload, jeiDownload, storageDrawersDownload, craftTweakDownload, astralSorceryDownload]) {
  	doLast{
 		println 'All modpack files downloaded!'
 	}
