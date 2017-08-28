@@ -2,7 +2,7 @@
 //Recipes that function like a couple of Ex Nihilo mechanics
 
 //All the saplings!
-val sap = <item:minecraft:sapling:*>
+val sap = <item:minecraft:sapling:*>;
 
 val sapOak     = <item:minecraft:sapling:0>;
 val sapSpruce  = <item:minecraft:sapling:1>;
@@ -55,7 +55,7 @@ val stone =     <item:minecraft:stone:*>;
 val pearl = <item:minecraft:ender_pearl>;
 val tear  =  <item:minecraft:ghast_tear>;
 
-recipes.addShaped("atotgEndPortal", oreDiamond,
+recipes.addShaped("atotgEndPortal", portal,
 	[[pearl, tear, pearl],
 	 [stone, pearl, stone],
 	 [stone, stone, stone]]);

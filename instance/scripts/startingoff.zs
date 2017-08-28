@@ -2,7 +2,7 @@
 
 //Dirt
 val dirt    =      <item:minecraft:dirt>;
-val twoDirt =                   2 * dirt;
+val twoDirt =                   dirt * 2;
 val sapling = <item:minecraft:sapling:*>;
 
 recipes.addShaped("atotgDirt", twoDirt,
