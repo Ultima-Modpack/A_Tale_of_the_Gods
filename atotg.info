@@ -1,1 +1,9 @@
 version : a.1.0
+/**
+* r : releasable, fits project goal well enough to release to the public
+* b : beta, in need of further testing before reaching 'r' status
+* f : all content in, balancing has not been tested yet
+* u : content still incoming
+* w : work very much still needed
+*/
+state : w
