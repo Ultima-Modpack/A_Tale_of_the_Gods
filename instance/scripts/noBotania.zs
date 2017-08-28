@@ -21,35 +21,35 @@ val shroom    =  <item:minecraft:red_mushroom:0>;
 val bluet     =    <item:minecraft:red_flower:8>;
 
 
-recipes.addShaped(oreDiamond,
+recipes.addShaped("atotgDiamondOre", oreDiamond,
 	[[stone, stone, stone],
 	 [stone, orchid, stone],
 	 [stone, stone, stone]]);
-recipes.addShaped(oreRedstone,
+recipes.addShaped("atotgRedstoneOre", oreRedstone,
 	[[stone, stone, stone],
 	 [stone, poppy, stone],
 	 [stone, stone, stone]]);
-recipes.addShaped(oreIron,
+recipes.addShaped("atotgIronOre", oreIron,
 	[[stone, stone, stone],
 	 [stone, tulip, stone],
 	 [stone, stone, stone]]);
-recipes.addShaped(oreGold,
+recipes.addShaped("atotgGoldOre", oreGold,
 	[[stone, stone, stone],
 	 [stone, dandelion, stone],
 	 [stone, stone, stone]]);
-recipes.addShaped(oreCoal,
+recipes.addShaped("atotgCoalOre", oreCoal,
 	[[stone, stone, stone],
 	 [stone, allium, stone],
 	 [stone, stone, stone]]);
-recipes.addShaped(oreEmerald,
+recipes.addShaped("atotgEmeraldOre", oreEmerald,
 	[[stone, stone, stone],
 	 [stone, daisy, stone],
 	 [stone, stone, stone]]);
-recipes.addShaped(oreQuartz,
+recipes.addShaped("atotgQuartzOre", oreQuartz,
 	[[nether, nether, nether],
 	 [nether, shroom, nether],
 	 [nether, nether, nether]]);
-recipes.addShaped(oreLapis,
+recipes.addShaped("atotgLapisOre", oreLapis,
 	[[stone, stone, stone],
 	 [stone, bluet, stone],
 	 [stone, stone, stone]]);

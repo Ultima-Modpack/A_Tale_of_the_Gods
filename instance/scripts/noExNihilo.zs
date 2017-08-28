@@ -18,12 +18,12 @@ val dyeJungle  =  <item:minecraft:dye:2>;
 val dyeAcacia  = <item:minecraft:dye:11>;
 val dyeDarkOak =  <item:minecraft:dye:0>;
 
-recipes.addShapeless(sapOak, [sap, dyeOak]);
-recipes.addShapeless(sapSpruce, [sap, dyeSpruce]);
-recipes.addShapeless(sapBirch, [sap, dyeBirch]);
-recipes.addShapeless(sapJungle, [sap, dyeJungle]);
-recipes.addShapeless(sapAcacia, [sap, dyeAcacia]);
-recipes.addShapeless(sapDarkOak, [sap, dyeDarkOak]);
+recipes.addShapeless("atotgOak", sapOak, [sap, dyeOak]);
+recipes.addShapeless("atotgSpruce", sapSpruce, [sap, dyeSpruce]);
+recipes.addShapeless("atotgBirch", sapBirch, [sap, dyeBirch]);
+recipes.addShapeless("atotgJungle", sapJungle, [sap, dyeJungle]);
+recipes.addShapeless("atotgAcacia", sapAcacia, [sap, dyeAcacia]);
+recipes.addShapeless("atotgDarkOak", sapDarkOak, [sap, dyeDarkOak]);
 
 //Fluids!
 val bucket = <item:minecraft:bucket>;
@@ -35,15 +35,15 @@ val water_surround = <item:minecraft:dye:4>;
 val lava_surround1 = <item:minecraft:redstone>;
 val lava_surround2 = <item:minecraft:gold_ingot>;
 
-recipes.addShaped(water,
+recipes.addShaped("atotgWaterBucket", water,
 	[[null, water_surround, null],
 	 [water_surround, bucket, water_surround],
 	 [null, water_surround, null]]);
-recipes.addShaped(lava,
+recipes.addShaped("atotgLavaBucket1", lava,
 	[[lava_surround1, lava_surround2, lava_surround1],
 	 [lava_surround2, bucket, lava_surround2],
 	 [lava_surround1, lava_surround2, lava_surround1]]);
-recipes.addShaped(lava,
+recipes.addShaped("atotgLavaBucket2", lava,
 	[[lava_surround2, lava_surround1, lava_surround2],
 	 [lava_surround1, bucket, lava_surround1],
 	 [lava_surround2, lava_surround1, lava_surround2]]);
@@ -55,7 +55,7 @@ val stone =     <item:minecraft:stone:*>;
 val pearl = <item:minecraft:ender_pearl>;
 val tear  =  <item:minecraft:ghast_tear>;
 
-recipes.addShaped(oreDiamond,
+recipes.addShaped("atotgEndPortal", oreDiamond,
 	[[pearl, tear, pearl],
 	 [stone, pearl, stone],
 	 [stone, stone, stone]]);
@@ -69,9 +69,9 @@ val dyeGranite  =  <item:minecraft:dye:1>;
 val dyeDiorite  = <item:minecraft:dye:15>;
 val dyeAndesite =  <item:minecraft:dye:8>;
 
-recipes.addShapeless(granite, [stone, dyeGranite]);
-recipes.addShapeless(diorite, [stone, dyeDiorite]);
-recipes.addShapeless(andesite, [stone, dyeAndesite]);
+recipes.addShapeless("atotgGranite", granite, [stone, dyeGranite]);
+recipes.addShapeless("atotgDiorite", diorite, [stone, dyeDiorite]);
+recipes.addShapeless("atotgAndesite", andesite, [stone, dyeAndesite]);
 
 //Dirts!
 val dirt = <item:minecraft:dirt>;
@@ -82,11 +82,11 @@ val mycelium = <item:minecraft:mycelium>;
 val podzol_surround   = <item:minecraft:leaves:1>;
 val mycelium_surround = <item:minecraft:leaves:2>;
 
-recipes.addShaped(podzol,
+recipes.addShaped("atotgPodzol", podzol,
 	[[podzol_surround, podzol_surround, podzol_surround],
 	 [podzol_surround, dirt, podzol_surround],
 	 [podzol_surround, podzol_surround, podzol_surround]]);
-recipes.addShaped(mycelium,
+recipes.addShaped("atotgMycelium", mycelium,
 	[[mycelium_surround, mycelium_surround, mycelium_surround],
 	 [mycelium_surround, dirt, mycelium_surround],
 	 [mycelium_surround, mycelium_surround, mycelium_surround]]);
@@ -96,4 +96,4 @@ val sand    = <item:minecraft:sand:0>;
 val redSand = <item:minecraft:sand:1>;
 val dyeRed  =  <item:minecraft:dye:1>;
 
-recipes.addShapeless(redSand, [sand, dyeRed]);
+recipes.addShapeless("atotgRedSand", redSand, [sand, dyeRed]);
