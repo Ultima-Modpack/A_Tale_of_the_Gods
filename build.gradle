@@ -103,6 +103,17 @@
 	}
  }
  
+ task astralSorceryDownload(type: JarDownload) {
+	sourceUrl = 'https://minecraft.curseforge.com/projects/astral-sorcery/files/2452200/download'
+	target = file('instance/mods/astralsorcery-1.12-1.6.1.jar')
+	doFirst {
+		println 'Downloading Astral Sorcery'
+	}
+	doLast {
+		println 'Complete.'
+	}
+ }
+ 
  class JarDownload extends DefaultTask {
  	@Input
  	String sourceUrl
