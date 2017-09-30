@@ -125,6 +125,17 @@
 	}
  }
  
+ task yunmgmDownload(type: JarDownload) {
+	sourceUrl = 'https://minecraft.curseforge.com/projects/yunomakegoodmap/files/2453724/download'
+	target = file('instance/mods/YUNoMakeGoodMap-1.12-6.3.0.28.jar')
+	doFirst {
+		println 'Downloading YUNoMakeGoodMap'
+	}
+	doLast {
+		println 'Complete.'
+	}
+ }
+ 
  class JarDownload extends DefaultTask {
  	@Input
  	String sourceUrl
@@ -138,7 +149,7 @@
  	}
  }
  
- task modpackMake(dependsOn: [journeyMapDownload, biblioCraftDownload, chameleonDownload, chiselDownload, ctmDownload, immersiveEngineeringDownload, industrialCraftDownload, jeiDownload, storageDrawersDownload, craftTweakDownload, astralSorceryDownload]) {
+ task modpackMake(dependsOn: [journeyMapDownload, biblioCraftDownload, chameleonDownload, chiselDownload, ctmDownload, immersiveEngineeringDownload, industrialCraftDownload, jeiDownload, storageDrawersDownload, craftTweakDownload, astralSorceryDownload, yunmgmDownload]) {
  	doLast{
 		println 'All modpack files downloaded!'
 	}
