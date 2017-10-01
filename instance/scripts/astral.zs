@@ -1,6 +1,7 @@
 // Astral Sorcery stuff!
 
 // Wand!
+
 val wand = <item:astralsorcery:itemwand>;
 val bone = <ore:bone>;
 val pearl = <ore:ender_pearl>;
@@ -16,6 +17,7 @@ mods.astralsorcery.Altar.addDiscoveryAltarRecipe(wand, starlightDiscovery, craft
 	]);
 
 // Linking Wand
+
 val link = <item:astralsorcery:itemlinkingtool>;
 val stick = <ore:stickWood>;
 
@@ -27,6 +29,7 @@ mods.astralsorcery.Altar.addDiscoveryAltarRecipe(link, starlightDiscovery, craft
 	]);
 
 // Marble!
+
 val marble = <item:astralsorcery:blockmarble>;
 val bonemeal = <item:minecraft:dye:15>;
 val flesh = <item:minecraft:rotten_flesh>;
@@ -49,3 +52,28 @@ val gravel = <ore:gravel>;
 val gold = <item:minecraft:gold_nugget> * 2;
 
 mods.astralsorcery.StarlightInfusion.addInfusion(gravel, gold, true, 1, 75);
+
+// Mineralis
+// Only Copper, Iron, Tin are availible. Need to get into some botania for the rest.
+// There is a chance that all of the planetaries are enabled. We'll see.
+
+mods.astralsorcery.RitualMineralis.removeOre("oreCoal");
+mods.astralsorcery.RitualMineralis.removeOre("oreGold");
+mods.astralsorcery.RitualMineralis.removeOre("oreLapis");
+mods.astralsorcery.RitualMineralis.removeOre("oreRedstone");
+mods.astralsorcery.RitualMineralis.removeOre("oreDiamond");
+mods.astralsorcery.RitualMineralis.removeOre("oreEmerald");
+mods.astralsorcery.RitualMineralis.removeOre("oreAluminum");
+mods.astralsorcery.RitualMineralis.removeOre("oreLead");
+mods.astralsorcery.RitualMineralis.removeOre("oreCertusQuartz");
+mods.astralsorcery.RitualMineralis.removeOre("oreNickel");
+mods.astralsorcery.RitualMineralis.removeOre("orePlatinum");
+mods.astralsorcery.RitualMineralis.removeOre("oreSilver");
+mods.astralsorcery.RitualMineralis.removeOre("oreMithril");
+mods.astralsorcery.RitualMineralis.removeOre("oreRuby");
+mods.astralsorcery.RitualMineralis.removeOre("oreSapphire");
+mods.astralsorcery.RitualMineralis.removeOre("oreUranium");
+mods.astralsorcery.RitualMineralis.removeOre("oreYellorite");
+mods.astralsorcery.RitualMineralis.removeOre("oreZinc");
+mods.astralsorcery.RitualMineralis.removeOre("oreSulfur");
+mods.astralsorcery.RitualMineralis.removeOre("oreOsmium");
