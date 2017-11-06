@@ -4,7 +4,7 @@
 
 val wand = <item:astralsorcery:itemwand>;
 val bone = <ore:bone>;
-val pearl = <ore:ender_pearl>;
+val pearl = <ore:enderpearl>;
 
 val craftTimeDiscovery = 100;
 val starlightDiscovery = 100;
@@ -18,15 +18,15 @@ mods.astralsorcery.Altar.addDiscoveryAltarRecipe(wand, starlightDiscovery, craft
 
 // Linking Wand
 
-val link = <item:astralsorcery:itemlinkingtool>;
-val stick = <ore:stickWood>;
+//val link = <item:astralsorcery:itemlinkingtool>;
+//val stick = <ore:stickWood>;
 
-mods.astralsorcery.Altar.removeAltarRecipe(link, 1);
-mods.astralsorcery.Altar.addDiscoveryAltarRecipe(link, starlightDiscovery, craftTimeDiscovery, [
-	null, bone, pearl,
-	null, stick, bone,
-	stick, null, null
-	]);
+//mods.astralsorcery.Altar.removeAltarRecipe(link, 1);
+//mods.astralsorcery.Altar.addDiscoveryAltarRecipe(link, starlightDiscovery, craftTimeDiscovery, [
+//	null, bone, pearl,
+//	null, stick, bone,
+//	stick, null, null
+//	]);
 
 // Marble!
 
@@ -41,12 +41,18 @@ recipes.addShaped("atotgMarble", marble,
 	 [null, bonemeal, null]]);
 
 // Aquamarine!
-// Panning for 'gold'
 
 val sand = <ore:sand>;
+val amulet = <item:projecte:item.pe_evertide_amulet>;
 val aquamarine = <item:astralsorcery:itemcraftingcomponent>;
 
-mods.astralsorcery.StarlightInfusion.addInfusion(sand, aquamarine, true, 1, 100);
+mods.astralsorcery.Altar.addDiscoveryAltarRecipe(aquamarine, starlightDiscovery, craftTimeDiscovery, [
+	null, sand,   null,
+	sand, amulet, sand,
+	null, sand,   null
+	]);
+
+// Panning for 'gold'
 
 val gravel = <ore:gravel>;
 val gold = <item:minecraft:gold_nugget> * 2;
