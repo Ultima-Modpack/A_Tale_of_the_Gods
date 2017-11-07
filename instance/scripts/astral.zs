@@ -1,10 +1,5 @@
 // Astral Sorcery stuff!
 
-// Set to 0 for debug recipes (IE no items from tentative mods)
-// Current mods in the 'tentative' category:
-//		ProjectE : waiting on legal information (license contains strange wording)
-val debug = 0; // 0 means true, 1 means false. Complain to the ZS team.
-
 // Wand!
 
 val wand = <item:astralsorcery:itemwand>;
@@ -49,9 +44,7 @@ recipes.addShaped("atotgMarble", marble,
 
 val sand = <ore:sand>;
 val amulet = <item:minecraft:ender_eye>;
-if(debug) {
-	amulet = <item:projecte:item.pe_evertide_amulet>;
-}
+//val amulet = <item:projecte:item.pe_evertide_amulet>;
 val aquamarine = <item:astralsorcery:itemcraftingcomponent>;
 
 mods.astralsorcery.Altar.addDiscoveryAltarRecipe(aquamarine, starlightDiscovery, craftTimeDiscovery, [
@@ -77,7 +70,7 @@ mods.astralsorcery.Altar.addDiscoveryAltarRecipe(aquamarine, starlightDiscovery,
 val gravel = <ore:gravel>;
 val gold = <item:minecraft:gold_nugget> * 2;
 
-mods.astralsorcery.StarlightInfusion.addInfusion(gravel, gold, true, 1, 75);
+mods.astralsorcery.StarlightInfusion.addInfusion(gravel, gold, true, 1.0, 75);
 
 // Mineralis
 // Only Copper, Iron, Tin are availible. Need to get into some botania for the rest.
