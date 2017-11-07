@@ -1,5 +1,10 @@
 // Astral Sorcery stuff!
 
+// Set to 0 for debug recipes (IE no items from tentative mods)
+// Current mods in the 'tentative' category:
+//		ProjectE : waiting on legal information (license contains strange wording)
+val debug = 0; // 0 means true, 1 means false. Complain to the ZS team.
+
 // Wand!
 
 val wand = <item:astralsorcery:itemwand>;
@@ -16,7 +21,7 @@ mods.astralsorcery.Altar.addDiscoveryAltarRecipe(wand, starlightDiscovery, craft
 	bone, null, null
 	]);
 
-// Linking Wand
+// Linking Wand //Removed for the time being. Updating world to make this step not necessary.
 
 //val link = <item:astralsorcery:itemlinkingtool>;
 //val stick = <ore:stickWood>;
@@ -43,13 +48,28 @@ recipes.addShaped("atotgMarble", marble,
 // Aquamarine!
 
 val sand = <ore:sand>;
-val amulet = <item:projecte:item.pe_evertide_amulet>;
+val amulet = <item:minecraft:ender_eye>;
+if(debug) {
+	amulet = <item:projecte:item.pe_evertide_amulet>;
+}
 val aquamarine = <item:astralsorcery:itemcraftingcomponent>;
 
 mods.astralsorcery.Altar.addDiscoveryAltarRecipe(aquamarine, starlightDiscovery, craftTimeDiscovery, [
 	null, sand,   null,
 	sand, amulet, sand,
 	null, sand,   null
+	]);
+
+// Rock Crystals!
+
+val terracotta = <item:minecraft:stained_hardened_clay>;
+val glass = <ore:blockGlassColorless>;
+val starlight = <liquid:astralsorcery.liquidstarlight>;
+
+mods.astralsorcery.Altar.addDiscoveryAltarRecipe(aquamarine, starlightDiscovery, craftTimeDiscovery * 20, [
+	null,  terracotta, null,
+	glass, starlight,  glass,
+	null,  amulet,     null
 	]);
 
 // Panning for 'gold'
