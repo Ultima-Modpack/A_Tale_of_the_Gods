@@ -38,8 +38,8 @@ task chameleonDownload(type: JarDownload) {
 }
 
 task chiselDownload(type: JarDownload) {
-	sourceUrl = 'https://minecraft.curseforge.com/projects/chisel/files/2451407/download'
-	target = file('instance/mods/Chisel-MC1.12-0.0.13.14.jar')
+	sourceUrl = 'https://minecraft.curseforge.com/projects/chisel/files/2479333/download'
+	target = file('instance/mods/Chisel-MC1.12-0.0.14.18.jar')
 	doFirst {
 		println 'Downloading Chisel...'
 	}
@@ -82,8 +82,8 @@ task industrialCraftDownload(type: JarDownload) {
 }
 
 task jeiDownload(type: JarDownload) {
-	sourceUrl = 'https://minecraft.curseforge.com/projects/just-enough-items-jei/files/2451305/download'
-	target = file('instance/mods/jei_1.12-4.7.2.77.jar')
+	sourceUrl = 'https://minecraft.curseforge.com/projects/just-enough-items-jei/files/2496408/download'
+	target = file('instance/mods/jei_1.12.2-4.8.0.111.jar')
 	doFirst {
 		println 'Downloading JEI...'
 	}
@@ -213,6 +213,27 @@ task baublesDownload(type: JarDownload) {
 	}
 }
 
+task hqmDownload(type: JarDownload) {
+	sourceUrl = 'https://minecraft.curseforge.com/projects/hardcore-questing-mode/files/2493769/download'
+	target = file('instance/mods/HQM-Beyond-1.12.x-5.2.0Alpha1.jar')
+	doFirst {
+		println 'Downloading HQM'
+	}
+	doLast {
+		println 'Complete.'
+	}
+}
+
+task coreModInstall(type: Copy, dependsOn: ':ToIaF:build') {
+	from new File('ToIaF/build/libs/Tale_of_Ice_and_Fire-1.0.jar')
+	into new File('instance/mods/')
+	doFirst {
+		println 'Installing core mod'
+	}
+	doLast {
+		println 'Complete.'
+	}
+}
 
 class JarDownload extends DefaultTask {
 	@Input
@@ -227,7 +248,7 @@ class JarDownload extends DefaultTask {
 	}
 }
 
-task modpackMake(dependsOn: [journeyMapDownload, biblioCraftDownload, chameleonDownload, chiselDownload, ctmDownload, immersiveEngineeringDownload, industrialCraftDownload, jeiDownload, storageDrawersDownload, craftTweakDownload, astralSorceryDownload, yunmgmDownload, betterWithModsDownload, projectEDownload, botaniaDownload, tinkersConstructDownload, forestryDownload, mantleDownload, baublesDownload]) {
+task modpackMake(dependsOn: [journeyMapDownload, biblioCraftDownload, chameleonDownload, chiselDownload, ctmDownload, immersiveEngineeringDownload, industrialCraftDownload, jeiDownload, storageDrawersDownload, craftTweakDownload, astralSorceryDownload, yunmgmDownload, betterWithModsDownload, projectEDownload, botaniaDownload, tinkersConstructDownload, forestryDownload, mantleDownload, baublesDownload, hqmDownload, coreModInstall]) {
 	doLast{
 		println 'All modpack files downloaded!'
 	}
