@@ -4,7 +4,7 @@
 
 val wand = <item:astralsorcery:itemwand>;
 val bone = <ore:bone>;
-val pearl = <ore:ender_pearl>;
+val pearl = <ore:enderpearl>;
 
 val craftTimeDiscovery = 100;
 val starlightDiscovery = 100;
@@ -16,17 +16,17 @@ mods.astralsorcery.Altar.addDiscoveryAltarRecipe(wand, starlightDiscovery, craft
 	bone, null, null
 	]);
 
-// Linking Wand
+// Linking Wand //Removed for the time being. Updating world to make this step not necessary.
 
-val link = <item:astralsorcery:itemlinkingtool>;
-val stick = <ore:stickWood>;
+//val link = <item:astralsorcery:itemlinkingtool>;
+//val stick = <ore:stickWood>;
 
-mods.astralsorcery.Altar.removeAltarRecipe(link, 1);
-mods.astralsorcery.Altar.addDiscoveryAltarRecipe(link, starlightDiscovery, craftTimeDiscovery, [
-	null, bone, pearl,
-	null, stick, bone,
-	stick, null, null
-	]);
+//mods.astralsorcery.Altar.removeAltarRecipe(link, 1);
+//mods.astralsorcery.Altar.addDiscoveryAltarRecipe(link, starlightDiscovery, craftTimeDiscovery, [
+//	null, bone, pearl,
+//	null, stick, bone,
+//	stick, null, null
+//	]);
 
 // Marble!
 
@@ -41,17 +41,39 @@ recipes.addShaped("atotgMarble", marble,
 	 [null, bonemeal, null]]);
 
 // Aquamarine!
-// Panning for 'gold'
 
 val sand = <ore:sand>;
+val amulet_ut = <item:minecraft:ender_eye>;
+//val amulet_ut = <item:projecte:item.pe_evertide_amulet>;
+val amulet = amulet_ut.giveBack(amulet_ut);
 val aquamarine = <item:astralsorcery:itemcraftingcomponent>;
 
-mods.astralsorcery.StarlightInfusion.addInfusion(sand, aquamarine, true, 1, 100);
+
+mods.astralsorcery.Altar.addDiscoveryAltarRecipe(aquamarine, starlightDiscovery, craftTimeDiscovery, [
+	null, sand,   null,
+	sand, amulet, sand,
+	null, sand,   null
+	]);
+
+// Rock Crystals!
+
+val terracotta = <item:minecraft:stained_hardened_clay>;
+val glass = <ore:blockGlassColorless>;
+val starlight = <liquid:astralsorcery.liquidstarlight>;
+val crystal = <item:astralsorcery:itemrockcrystalsimple>;
+
+mods.astralsorcery.Altar.addDiscoveryAltarRecipe(crystal, starlightDiscovery, craftTimeDiscovery * 20, [
+	null,  terracotta, null,
+	glass, starlight,  glass,
+	null,  amulet,     null
+	]);
+
+// Panning for 'gold'
 
 val gravel = <ore:gravel>;
 val gold = <item:minecraft:gold_nugget> * 2;
 
-mods.astralsorcery.StarlightInfusion.addInfusion(gravel, gold, true, 1, 75);
+mods.astralsorcery.StarlightInfusion.addInfusion(gravel, gold, true, 1.0, 75);
 
 // Mineralis
 // Only Copper, Iron, Tin are availible. Need to get into some botania for the rest.
