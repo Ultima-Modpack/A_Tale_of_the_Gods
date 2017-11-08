@@ -1,8 +1,16 @@
+Us. We put this thing together:
+
 calebrudolph - Modpack developer, Core mod developer
 Mewr11 - Modpack developer, Creative lead
 
+
+Generally cool people who did a lot of work we built upon:
+
 McJty - Having good documentation
 sqeek502 - gradle wizard
+
+
+Mod Authors:
 
 JDSinclair - BiblioCraft
 jaquadro - Storage Drawers, Chameleon
@@ -10,8 +18,26 @@ tterag1098 - Chisel, ConnectedTextures
 BluSunrize - Immersive Engineering
 Player - industrialcraft
 techbrew - Just Enough Items
-mezz - JourneyMap
+mezz - JourneyMap, Forestry
 jaredlll08 - CraftTweaker
 StanH - CraftTweaker
 HellFirePvP - Astral Sorcery
 wiiv - Astral Sorcery
+Beeto - Better With Mods
+primetoxinz - Better With Mods
+sinkillerj - ProjectE
+x3n0ph0b3 - ProjectE (inspiration)
+vazkii - Botania
+SirSengir - Forestry
+mDiyo - Tinkers' Construct, Mantle
+boni - Tinkers' Construct, Mantle
+jadedcat - Tinkers' Construct
+KnightMiner - Tinkers' Construct
+Alexbegt - Mantle
+Arkan - Mantle (former)
+fuj1n - Mantle
+progwml6 - Mantle
+azanor - Baubles
+CovertJaguar - Forestry
+MysteriousAges - Forestry
+
