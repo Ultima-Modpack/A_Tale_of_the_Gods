@@ -43,9 +43,11 @@ recipes.addShaped("atotgMarble", marble,
 // Aquamarine!
 
 val sand = <ore:sand>;
-val amulet = <item:minecraft:ender_eye>;
-//val amulet = <item:projecte:item.pe_evertide_amulet>;
+val amulet_ut = <item:minecraft:ender_eye>;
+//val amulet_ut = <item:projecte:item.pe_evertide_amulet>;
+val amulet = amulet_ut.giveBack(amulet_ut);
 val aquamarine = <item:astralsorcery:itemcraftingcomponent>;
+
 
 mods.astralsorcery.Altar.addDiscoveryAltarRecipe(aquamarine, starlightDiscovery, craftTimeDiscovery, [
 	null, sand,   null,
@@ -58,8 +60,9 @@ mods.astralsorcery.Altar.addDiscoveryAltarRecipe(aquamarine, starlightDiscovery,
 val terracotta = <item:minecraft:stained_hardened_clay>;
 val glass = <ore:blockGlassColorless>;
 val starlight = <liquid:astralsorcery.liquidstarlight>;
+val crystal = <item:astralsorcery:itemrockcrystalsimple>;
 
-mods.astralsorcery.Altar.addDiscoveryAltarRecipe(aquamarine, starlightDiscovery, craftTimeDiscovery * 20, [
+mods.astralsorcery.Altar.addDiscoveryAltarRecipe(crystal, starlightDiscovery, craftTimeDiscovery * 20, [
 	null,  terracotta, null,
 	glass, starlight,  glass,
 	null,  amulet,     null

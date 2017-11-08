@@ -26,7 +26,9 @@ val gunpowder = <ore:gunpowder>;
 val bonemeal = <item:minecraft:dye:15>;
 val flesh = <item:minecraft:rotten_flesh>;
 val clay = <item:minecraft:clay>;
-val amulet = <item:projecte:item.pe_evertide_amulet>;
+val amulet_ut = <item:minecraft:ender_eye>;
+//val amulet_ut = <item:projecte:item.pe_evertide_amulet>;
+val amulet = amulet_ut.giveBack();
 
 recipes.addShapeless("atotgDirtAdvanced", dirt, [sapling, sapling, sapling, sand, flesh]);
 
