@@ -49,8 +49,8 @@
  }
  
  task ctmDownload(type: JarDownload) {
-	sourceUrl = 'https://minecraft.curseforge.com/projects/ctm/files/2447705/download'
-	target = file('instance/mods/CTM-MC1.12-0.2.0.3.jar')
+	sourceUrl = 'https://minecraft.curseforge.com/projects/ctm/files/2485010/download'
+	target = file('instance/mods/CTM-MC1.12-0.2.3.9.jar')
 	doFirst {
 		println 'Downloading CTM...'
 	}
