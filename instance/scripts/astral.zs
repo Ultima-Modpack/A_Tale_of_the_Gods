@@ -10,11 +10,10 @@ val craftTimeDiscovery = 100;
 val starlightDiscovery = 100;
 
 mods.astralsorcery.Altar.removeAltarRecipe(wand, 0);
-mods.astralsorcery.Altar.addDiscoveryAltarRecipe(wand, starlightDiscovery, craftTimeDiscovery, [
-	null, pearl, bone,
-	null, bone, pearl,
-	bone, null, null
-	]);
+recipes.addShaped("atotgAstralWand", wand,
+	[[null, pearl, bone],
+	 [null, bone, pearl],
+	 [bone, null, null]]);
 
 // Linking Wand //Removed for the time being. Updating world to make this step not necessary.
 
@@ -26,7 +25,7 @@ mods.astralsorcery.Altar.addDiscoveryAltarRecipe(wand, starlightDiscovery, craft
 //	null, bone, pearl,
 //	null, stick, bone,
 //	stick, null, null
-//	]);
+//]);
 
 // Marble!
 
@@ -43,9 +42,7 @@ recipes.addShaped("atotgMarble", marble,
 // Aquamarine!
 
 val sand = <ore:sand>;
-val amulet_ut = <item:minecraft:ender_eye>;
-//val amulet_ut = <item:projecte:item.pe_evertide_amulet>;
-val amulet = amulet_ut.giveBack(amulet_ut);
+val amulet = <item:projecte:item.pe_evertide_amulet>.giveBack();
 val aquamarine = <item:astralsorcery:itemcraftingcomponent>;
 
 
@@ -53,7 +50,20 @@ mods.astralsorcery.Altar.addDiscoveryAltarRecipe(aquamarine, starlightDiscovery,
 	null, sand,   null,
 	sand, amulet, sand,
 	null, sand,   null
-	]);
+]);
+
+// Lightwell!
+
+val well = <item:astralsorcery:blockwell>;
+val runed = <item:astralsorcery:blockmarble:6>;
+val chiseled = <item:astralsorcery:blockmarble:4>;
+
+mods.astralsorcery.Altar.removeAltarRecipe(well, 0);
+mods.astralsorcery.Altar.addDiscoveryAltarRecipe(well, starlightDiscovery * 2.5, craftTimeDiscovery, [
+	runed, null,   runed,
+	chiseled, aquamarine, chiseled,
+	aquamarine, runed,   aquamarine
+]);
 
 // Rock Crystals!
 
@@ -66,11 +76,11 @@ mods.astralsorcery.Altar.addDiscoveryAltarRecipe(crystal, starlightDiscovery, cr
 	null,  terracotta, null,
 	glass, starlight,  glass,
 	null,  amulet,     null
-	]);
+]);
 
 // Panning for 'gold'
 
-val gravel = <ore:gravel>;
+val gravel = <item:minecraft:gravel>;
 val gold = <item:minecraft:gold_nugget> * 2;
 
 mods.astralsorcery.StarlightInfusion.addInfusion(gravel, gold, true, 1.0, 75);

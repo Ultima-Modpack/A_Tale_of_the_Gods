@@ -11,7 +11,7 @@ recipes.addShaped("atotgDirt", twoDirt,
 	 [sapling, sapling, sapling]]);
 
 //Various stone types
-val hammer = <item:immersiveengineering:tool>;
+val hammer = <item:immersiveengineering:tool>.transformDamage();
 val stone  =           <item:minecraft:stone>;
 val cobble =     <item:minecraft:cobblestone>;
 val gravel =          <item:minecraft:gravel>;
@@ -26,9 +26,7 @@ val gunpowder = <ore:gunpowder>;
 val bonemeal = <item:minecraft:dye:15>;
 val flesh = <item:minecraft:rotten_flesh>;
 val clay = <item:minecraft:clay>;
-val amulet_ut = <item:minecraft:ender_eye>;
-//val amulet_ut = <item:projecte:item.pe_evertide_amulet>;
-val amulet = amulet_ut.giveBack();
+val amulet = <item:projecte:item.pe_evertide_amulet>.giveBack();
 
 recipes.addShapeless("atotgDirtAdvanced", dirt, [sapling, sapling, sapling, sand, flesh]);
 
