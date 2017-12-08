@@ -7,6 +7,7 @@ val sapling = <ore:treeSapling>;
 val amulet = <item:projecte:item.pe_evertide_amulet>.giveBack();
 val pearl = <ore:enderpearl>
 
+recipes.remove(floral);
 mods.astralsorcery.Altar.addAttunementAltarRecipe(floral, 500, 300, [
 	bonemeal, bonemeal, bonemeal,
 	bonemeal, pearl,    bonemeal,
